@@ -1,0 +1,14 @@
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\bin\Debug\metronome.exe.config
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\bin\Debug\metronome.exe
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\bin\Debug\metronome.pdb
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\MainWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\App.g.cs
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome_MarkupCompile.cache
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome_MarkupCompile.lref
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\MainWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.g.resources
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.exe
+c:\users\user\documents\visual studio 2015\Projects\metronome\metronome\obj\Debug\metronome.pdb
