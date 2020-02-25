@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Multimedia;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,68 +27,68 @@ namespace metronome
         public MainWindow()
         {
             InitializeComponent();
+           
+            _time = new Multimedia.Timer(); 
+            _time.Period = 250;
+            System.Threading.Thread thisThread = System.Threading.Thread.CurrentThread;
+            thisThread.Priority = System.Threading.ThreadPriority.Highest;
         }
-        MediaPlayer media;
+       
+        SoundPlayer tik;
+        SoundPlayer tok;
+        Multimedia.Timer _time;
+        private  bool isPlaying = false;
+        private int count = 0;
+        private  int timesignature = 4;
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            //int bpm = Int16.Parse(textBox.Text);
-            //  String path = "metronome.wav";
-
             int bpm =  Int16.Parse(textBox.Text);
-            String path = "metronome.wav";
-            media = new MediaPlayer();
-          
-            media.Open(new Uri(path, UriKind.RelativeOrAbsolute));
+            tik = new SoundPlayer(Properties.Resources.tik);
+            tok = new SoundPlayer(Properties.Resources.tok);
+           
 
-            /*   DispatcherTimer timerMusicTime = new DispatcherTimer();
-               timerMusicTime.Interval = TimeSpan.FromSeconds(bpm);
-               timerMusicTime.Tick += new EventHandler(timer_Tick);
-               timerMusicTime.Start();*/
-            /* Stopwatch s = new Stopwatch();
-             using (var timer = new MultimediaTimer() { Interval = 1 })
-             {
-                 timer.Elapsed += (o, b) => {
-
-                    // media.Position = TimeSpan.Zero;
-                     media.Play();
-
-
-                 };
-                 s.Start();
-                 timer.Start();
-
-                 timer.Stop();
-             }*/
-            Multimedia.Timer time = new Multimedia.Timer();
-            time.Mode = Multimedia.TimerMode.Periodic;
-            time.Period = bpm;
-            time.Resolution = 1;
-          //  time.SynchronizingObject = this;
-            time.Tick += (s, b) =>
+        
+            if (!isPlaying)
             {
-              //  media.Position = TimeSpan.Zero;
-                media.Play();
-              
-            };
-            time.Start();
-            // Play();
+                _time.Period = (int)(1000 * (60f / bpm));
+                _time.Start();
+                count = 0;
+                _time.Tick += _timer_Tick;
+                isPlaying = true;
+                Start.Content = "Stop";
+            }
+            else
+            {
+                _time.Tick -= _timer_Tick ;
+                _time.Stop();
+                count = 0;
+                isPlaying = false;
+                Start.Content = "Start";
+               
+            }
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+
+
+      
+
+    
+
+
+
+
+    private void _timer_Tick(object sender,EventArgs e)
         {
+            count++;
+            if (count == 1) tok.Play();
+            else tik.Play();
            
-           
-            media.Play();
-            media.Position = TimeSpan.Zero;
+            if (count == timesignature) count = 0;
+         
         }
 
+ 
 
-
-        /* async void PlayAsync()
-         {
-
-             await Task.Run(()=>Play());
-         }*/
         private void button_Click(object sender, RoutedEventArgs e)
         {
             int numbpm = Int16.Parse(textBox.Text);
@@ -100,6 +102,22 @@ namespace metronome
             int numbpm = Int16.Parse(textBox.Text);
             numbpm -= 1;
             textBox.Text = numbpm.ToString();
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(comboBox.SelectedIndex)
+            {
+                case 0:
+                    timesignature = 4;
+                    break;
+                case 1:
+                    timesignature = 5;
+                    break;
+                case 2:
+                    timesignature = 6;
+                    break;
+            }
         }
     }
 }
