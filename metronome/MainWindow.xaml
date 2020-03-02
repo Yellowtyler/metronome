@@ -6,30 +6,30 @@
         xmlns:local="clr-namespace:metronome"
         mc:Ignorable="d"
         Title="Metronome" Height="350" Width="225">
-    <Grid>
+    <Grid Name="grid">
 
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="83,115,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" Width="54"/>
         <Button x:Name="button" Content="+" HorizontalAlignment="Left" Margin="152,115,0,0" VerticalAlignment="Top" Width="25" Height="23" Click="button_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Rectangle Fill="Black" Height="5" Width="20">
-                            
+                        <Rectangle Fill="Black" Height="5" Width="20" RadiusX="3" RadiusY="3">
+
                         </Rectangle>
-                        <Rectangle Fill="Black" Height="20" Width="5">
+                        <Rectangle Fill="Black" Height="20" Width="5" RadiusX="3" RadiusY="3">
 
                         </Rectangle>
                     </Grid>
                 </ControlTemplate>
             </Button.Template>
-            
+
         </Button>
         <Button x:Name="button_Copy" HorizontalAlignment="Left" Margin="42,115,0,0" VerticalAlignment="Top" Width="25" Height="23" RenderTransformOrigin="-2.936,0.722" Click="button_Copy_Click" >
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                   
-                        <Rectangle Fill="Black" Height="5" Width="20"></Rectangle>
-                   
+
+                    <Rectangle Fill="Black" Height="5" Width="20" RadiusX="3" RadiusY="3"></Rectangle>
+
                 </ControlTemplate>
             </Button.Template>
         </Button>
@@ -42,37 +42,34 @@
                     </Grid>
                 </ControlTemplate>
             </Button.Template>
-            
+
         </Button>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="42,196,0,0" VerticalAlignment="Top" Width="135" SelectionChanged="comboBox_SelectionChanged">
             <TextBlock Text="4/4"/>
             <TextBlock Text="5/4"/>
             <TextBlock Text="6/4"/>
         </ComboBox>
-        <Grid HorizontalAlignment="Left" Height="24" Margin="42,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.727,0.556">
-            <Rectangle Fill="Black" RadiusX="10" RadiusY="5"/>
-            <Grid Height="18" Width="13">
-                <Rectangle Fill="White" RadiusX="10" RadiusY="5"/>
-            </Grid>
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="24" Margin="83,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="-0.409,0.444">
-            <Rectangle Fill="Black" RadiusX="10" RadiusY="5"/>
-            <Grid Height="18" Width="13">
-                <Rectangle Fill="White" RadiusX="10" RadiusY="5" Visibility="Hidden"/>
-            </Grid>
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="24" Margin="124,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="-0.409,0.444">
-            <Rectangle Fill="Black" RadiusX="10" RadiusY="5"/>
-            <Grid Height="18" Width="13">
-                <Rectangle Fill="White" RadiusX="10" RadiusY="5"  Visibility="Hidden"/>
-            </Grid>
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="24" Margin="164,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="-0.409,0.444">
-            <Rectangle Fill="Black" RadiusX="10" RadiusY="5"/>
-            <Grid Height="18" Width="13">
-                <Rectangle Fill="White" RadiusX="10" RadiusY="5"  Visibility="Hidden"/>
-            </Grid>
-        </Grid>
+
+        <Rectangle Fill="Black" RadiusX="10" RadiusY="5" Visibility="Visible"  HorizontalAlignment="Left" Height="24" Margin="42,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.727,0.556" Name="rectB1"/>
+        <Rectangle Fill="#5e5a5a" RadiusX="10" RadiusY="5" Visibility="Hidden"  Name="rectG1" HorizontalAlignment="Left" Height="24" Margin="42,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.727,0.556"/>
+        <Rectangle Fill="White" RadiusX="10" RadiusY="5" RenderTransformOrigin="0.727,0.556" HorizontalAlignment="Left" Height="18" Margin="45,55,0,0" VerticalAlignment="Top" Width="13" Name="W1"/>
+
+
+        <Rectangle Fill="Black"  HorizontalAlignment="Left" Height="24" Margin="83,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="-0.409,0.444"  Visibility="Visible" RadiusX="10" RadiusY="5" Name="rectB2"/>
+        <Rectangle Fill="#5e5a5a" RadiusX="10" RadiusY="5" Visibility="Hidden"  Name="rectG2"  Height="24" HorizontalAlignment="Left" Margin="83,52,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.409,0.444" Width="19"/>
+        <Rectangle Fill="White" RadiusX="10" RadiusY="5" HorizontalAlignment="Left" Margin="86,55,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.409,0.444" Height="18" Width="13" Name="W2"/>
+
+
+        <Rectangle Fill="Black" RadiusX="10" RadiusY="5" Visibility="Visible"  Height="24"  Width="19" HorizontalAlignment="Left" Margin="124,52,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.409,0.444" Name="rectB3"/>
+        <Rectangle Fill="#5e5a5a" RadiusX="10" RadiusY="5" Visibility="Hidden" Height="24"  Width="19" HorizontalAlignment="Left" Margin="124,52,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.409,0.444" Name="rectG3"/>
+        <Rectangle Fill="White" RadiusX="10" RadiusY="5"  Visibility="Visible" Height="18" Width="13"  HorizontalAlignment="Left" Margin="127,55,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-0.409,0.444" Name="W3"/>
+
+
+        <Rectangle Fill="Black" RadiusX="10" RadiusY="5" Visibility="Visible"  HorizontalAlignment="Left" Height="24" Margin="164,52,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="-0.409,0.444" Name="rectB4"/>
+        <Rectangle Fill="#5e5a5a" RadiusX="10" RadiusY="5" Visibility="Hidden" Height="24"  Width="19" HorizontalAlignment="Left"  Margin="164,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.409,0.444" Name="rectG4" />
+        <Rectangle Fill="White" RadiusX="10" RadiusY="5"  Visibility="Visible"  Height="18" Width="13" HorizontalAlignment="Left"  Margin="167,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.409,0.444" Name="W4"/>
+
+
 
     </Grid>
 </Window>
